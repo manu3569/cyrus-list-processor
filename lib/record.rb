@@ -13,6 +13,14 @@ class Record
     end
   end
 
+  def sortable_date_of_birth
+    @date_of_birth.strftime('%Y-%m-%d') if ALLOWED_ATTRIBUTES.include?(:date_of_birth)
+  end
+
+  def date_of_birth
+    @date_of_birth.strftime('%-m/%d/%Y') if ALLOWED_ATTRIBUTES.include?(:date_of_birth)
+  end
+
   private
 
     def set_allowed_attributes(attributes)
@@ -22,7 +30,7 @@ class Record
     end
 
     def format_date_of_birth
-      @date_of_birth.gsub!('-','/')
+      @date_of_birth = Date.strptime(@date_of_birth.gsub('-','/'), '%m/%d/%Y')
     end
 
 end

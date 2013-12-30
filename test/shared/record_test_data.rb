@@ -13,11 +13,15 @@ module RecordTestData
   end
 
   def date_of_birth
-    "12-31-1960"
+    "1-31-1960"
   end
 
   def formatted_date_of_birth
-    "12/31/1960"
+    "1/31/1960"
+  end
+
+  def sortable_date_of_birth
+    "1960-01-31"
   end
 
   def favorite_color
@@ -44,6 +48,18 @@ module RecordTestData
 
   def space_delimited_columns
     [:last_name, :first_name, nil, :gender, :date_of_birth, :favorite_color]
+  end
+
+  def ordered_by_last_name
+    %w(Abercrombie Bishop Bonk Bouillon Hingis Kelly Kournikova Seles Smith).join
+  end
+
+  def ordered_by_date_of_birth
+    %w(Smith Hingis Kournikova Bonk Bouillon Seles Bishop Kelly Abercrombie).join
+  end
+
+  def ordered_by_gender
+    %w(Seles Hingis Kournikova Kelly Bishop Abercrombie Bouillon Bonk Smith).join
   end
 
   def pipe_delimited_records_list

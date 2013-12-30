@@ -49,4 +49,8 @@ class TestRecord < Minitest::Test
     refute_equal @record, other_record
   end
 
+  def test_for_sortable_date_of_birth
+    assert_equal sortable_date_of_birth, @record.sortable_date_of_birth
+  end
+
 end
