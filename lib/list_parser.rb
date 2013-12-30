@@ -13,7 +13,6 @@ class ListParser
 
     def parse_file
       File.read(@filename).split("\n").map do |raw_record|
-        puts "RR: #{raw_record}"
         parse_record(raw_record)
       end
     end
@@ -26,7 +25,6 @@ class ListParser
         attrib[column_name] = column_values[column_index]
         attrib
       end
-      puts ">>> #{attributes.inspect}"
       Record.new(attributes)
     end
 end

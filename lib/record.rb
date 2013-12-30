@@ -22,7 +22,7 @@ class Record
     end
 
     def format_date_of_birth
-      @date_of_birth &&= Date.parse(@date_of_birth).strftime("%m/%d/%Y")
+      @date_of_birth.gsub!('-','/')
     end
 
 end
