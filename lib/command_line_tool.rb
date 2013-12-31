@@ -5,8 +5,7 @@ class CommandLineTool
     process_options(options)
   end
 
-  def to_s
-    
+  def result
     return help_context if @help
     return no_sort_order if @output_type.nil?
     return no_record_file if @record_collection.all.empty?
@@ -19,7 +18,6 @@ class CommandLineTool
       when '3'
         format_list(@record_collection.order_by_last_name)
     end
-
   end
 
   private
@@ -54,7 +52,7 @@ class CommandLineTool
     end
 
     def no_sort_order
-        
+      'You must specify a sort order'
     end
 
     def no_record_file

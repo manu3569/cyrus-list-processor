@@ -1,3 +1,5 @@
+# Cyrus List Processor
+
 ### Overview
 
 This application takes one or more pipe, comma or space separated files and 
@@ -50,6 +52,12 @@ $ ruby bin/run.rb --pipe=test/data/pipe.txt --comma=test/data/comma.txt --space=
  Bonk Radek M 6/3/1975 Green
  Bishop Timothy Male 4/23/1967 Yellow
  Abercrombie Neil Male 2/13/1943 Tan
+```
+
+### Running Tests
+
+``` bash
+$ rake test
 ```
 
 #### Ruby Version
