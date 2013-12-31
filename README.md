@@ -1,5 +1,8 @@
 # Cyrus List Processor
 
+by Manuel Neuhauser (manuel.neuhauser@gmail.com)
+
+
 ### Overview
 
 This application takes one or more pipe, comma or space separated files and 
