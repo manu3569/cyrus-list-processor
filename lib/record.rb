@@ -18,7 +18,13 @@ class Record
   end
 
   def date_of_birth
-    @date_of_birth.strftime('%-m/%d/%Y') if ALLOWED_ATTRIBUTES.include?(:date_of_birth)
+    @date_of_birth.strftime('%-m/%-d/%Y') if ALLOWED_ATTRIBUTES.include?(:date_of_birth)
+  end
+
+  def to_s
+    ALLOWED_ATTRIBUTES.inject("") do |row, column|
+      row << " #{self.send(column)}"
+    end
   end
 
   private

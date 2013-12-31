@@ -25,15 +25,15 @@ class TestRecordCollection < Minitest::Test
   end
 
   def test_records_order_by_last_name
-    assert_equal ordered_by_last_name, (@record_collection.order_by_last_name.map &:last_name).join
+    assert_equal ordered_by_last_name, (@record_collection.order_by_last_name.map &:last_name)
   end
 
   def test_records_order_by_date_of_birth
-    assert_equal ordered_by_date_of_birth, (@record_collection.order_by_date_of_birth.map &:last_name).join
+    assert_equal ordered_by_date_of_birth, (@record_collection.order_by_date_of_birth.map &:last_name)
   end
 
   def test_records_order_by_gender
-    assert_equal ordered_by_gender, (@record_collection.order_by_gender.map &:last_name).join
+    assert_equal ordered_by_gender, (@record_collection.order_by_gender.map &:last_name)
   end
 
 end

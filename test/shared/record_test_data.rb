@@ -51,15 +51,27 @@ module RecordTestData
   end
 
   def ordered_by_last_name
-    %w(Abercrombie Bishop Bonk Bouillon Hingis Kelly Kournikova Seles Smith).join
+    %w(Smith Seles Kournikova Kelly Hingis Bouillon Bonk Bishop Abercrombie)
+  end
+
+  def last_name_order_regex
+    Regexp.new(ordered_by_last_name.join(".*"), Regexp::MULTILINE)
   end
 
   def ordered_by_date_of_birth
-    %w(Smith Hingis Kournikova Bonk Bouillon Seles Bishop Kelly Abercrombie).join
+    %w(Abercrombie Kelly Bishop Seles Bouillon Bonk Kournikova Hingis Smith)
+  end
+
+  def date_of_birth_order_regex
+    Regexp.new(ordered_by_date_of_birth.join(".*"), Regexp::MULTILINE)
   end
 
   def ordered_by_gender
-    %w(Seles Hingis Kournikova Kelly Bishop Abercrombie Bouillon Bonk Smith).join
+    %w(Hingis Kelly Kournikova Seles Abercrombie Bishop Bonk Bouillon Smith)
+  end
+
+  def gender_order_regex
+    Regexp.new(ordered_by_gender.join(".*"), Regexp::MULTILINE)
   end
 
   def pipe_delimited_records_list
@@ -84,6 +96,10 @@ module RecordTestData
       Record.new({ last_name: 'Hingis', first_name: 'Martina', gender: 'F', date_of_birth: '4-2-1979', favorite_color: 'Green' }),
       Record.new({ last_name: 'Seles', first_name: 'Monica', gender: 'F', date_of_birth: '12-2-1973', favorite_color: 'Black' })
     ]
+  end
+
+  def record_files
+    ["--pipe=test/data/pipe.txt", "--comma=test/data/comma.txt", "--space=test/data/space.txt"]
   end
 
 end
